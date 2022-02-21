@@ -39,15 +39,6 @@ public class FulfillmentOrder implements Serializable {
     @JacksonXmlProperty(localName = "sellZLLocationNbr")
     public int sellZLLocationNbr;
 
-    @JacksonXmlProperty(localName = "source")
-    public Source source;
-
-    @JacksonXmlProperty(localName = "orderTotals")
-    public OrderTotals orderTotals;
-
-    @JacksonXmlProperty(localName = "billingAddress")
-    public BillingAddress billingAddress;
-
     public FulfillmentOrder() {
     }
 
@@ -131,29 +122,6 @@ public class FulfillmentOrder implements Serializable {
         this.sellZLLocationNbr = sellZLLocationNbr;
     }
 
-    public Source getSource() {
-        return source;
-    }
-
-    public void setSource(Source source) {
-        this.source = source;
-    }
-
-    public OrderTotals getOrderTotals() {
-        return orderTotals;
-    }
-
-    public void setOrderTotals(OrderTotals orderTotals) {
-        this.orderTotals = orderTotals;
-    }
-
-    public BillingAddress getBillingAddress() {
-        return billingAddress;
-    }
-
-    public void setBillingAddress(BillingAddress billingAddress) {
-        this.billingAddress = billingAddress;
-    }
 
     @Override
     public String toString() {
@@ -168,9 +136,6 @@ public class FulfillmentOrder implements Serializable {
                 ", orderStatusDescription='" + orderStatusDescription + '\'' +
                 ", sellZLDivisionNbr=" + sellZLDivisionNbr +
                 ", sellZLLocationNbr=" + sellZLLocationNbr +
-                ", source=" + source +
-                ", orderTotals=" + orderTotals +
-                ", billingAddress=" + billingAddress +
                 '}';
     }
 }

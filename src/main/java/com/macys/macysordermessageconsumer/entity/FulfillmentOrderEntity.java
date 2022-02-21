@@ -11,16 +11,7 @@ public class FulfillmentOrderEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public int id;
-
-    @Embedded
-    public Source source;
-
-    @Embedded
-    public OrderTotals orderTotals;
-
-    @Embedded
-    public BillingAddress billingAddress;
-
+   
     @Column(name = "orderID")
     public int orderID;
 
@@ -134,38 +125,11 @@ public class FulfillmentOrderEntity implements Serializable {
     public void setSellZLLocationNbr(int sellZLLocationNbr) {
         this.sellZLLocationNbr = sellZLLocationNbr;
     }
-
-    public Source getSource() {
-        return source;
-    }
-
-    public void setSource(Source source) {
-        this.source = source;
-    }
-
-    public OrderTotals getOrderTotals() {
-        return orderTotals;
-    }
-
-    public void setOrderTotals(OrderTotals orderTotals) {
-        this.orderTotals = orderTotals;
-    }
-
-    public BillingAddress getBillingAddress() {
-        return billingAddress;
-    }
-
-    public void setBillingAddress(BillingAddress billingAddress) {
-        this.billingAddress = billingAddress;
-    }
-
+    
     @Override
     public String toString() {
         return "FulfillmentOrderEntity{" +
                 "id=" + id +
-                ", source=" + source +
-                ", orderTotals=" + orderTotals +
-                ", billingAddress=" + billingAddress +
                 ", orderID=" + orderID +
                 ", orderTypeCode='" + orderTypeCode + '\'' +
                 ", partnerOrderID='" + partnerOrderID + '\'' +

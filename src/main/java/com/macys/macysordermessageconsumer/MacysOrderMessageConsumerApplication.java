@@ -18,35 +18,25 @@ import java.util.ArrayList;
 @EnableSwagger2
 public class MacysOrderMessageConsumerApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(MacysOrderMessageConsumerApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(MacysOrderMessageConsumerApplication.class, args);
+	}
 
-    @Bean
-    public Docket getCustomizedDocket() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(getApiInfo())
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("com.macys"))
-                .paths(PathSelectors.any())
-                .build();
-    }
+	@Bean
+	public Docket getCustomizedDocket() {
+		return new Docket(DocumentationType.SWAGGER_2).apiInfo(getApiInfo()).select()
+				.apis(RequestHandlerSelectors.basePackage("com.macys")).paths(PathSelectors.any()).build();
+	}
 
-    private ApiInfo getApiInfo() {
-        return new ApiInfo(
-                "Macys Rabbitmq use case application documentation",
-                "Api documentation for MACY's RabbitMQ Use Case consumer application ",
-                "1.0",
-                "",
-                new Contact("Mahadev", "", "mahadevappa.thammappa@zensar.com"),
-                "GPL",
-                "www.gpl.com",
-                new ArrayList<>()
-        );
-    }
+	private ApiInfo getApiInfo() {
+		return new ApiInfo("Macys Rabbitmq use case application documentation",
+				"Api documentation for MACY's RabbitMQ Use Case consumer application ", "1.0", "",
+				new Contact("Mahadev", "", "mahadevappa.thammappa@zensar.com"), "GPL", "www.gpl.com",
+				new ArrayList<>());
+	}
 
-    @Bean
-    public ModelMapper getModelMapper() {
-        return new ModelMapper();
-    }
+	@Bean
+	public ModelMapper getModelMapper() {
+		return new ModelMapper();
+	}
 }
